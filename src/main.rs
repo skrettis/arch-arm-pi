@@ -13,6 +13,7 @@ fn rocket() -> _ {
     let port = port.parse::<u16>().unwrap();
     let mut config = Config::default();
     config.port = port;
+    config.address = "0.0.0.0".parse().unwrap();
 
     let home: String = env::var("HOME").unwrap();
     let path = PATH.replace("$HOME", &home);
