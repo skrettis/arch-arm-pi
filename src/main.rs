@@ -1,7 +1,12 @@
+use std::env;
 use rocket::launch;
-use rocket::fs::{FileServer, relative};
+use rocket::fs::FileServer;
+
+const PATH: &str = "$HOME/.config/arch-jlake-co/static";
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", FileServer::from(relative!("static")))
+    let home: String = env::var("HOME").unwrap();
+    let path = PATH.replace("$HOME", &home);
+    rocket::build().mount("/", FileServer::from(path))
 }
