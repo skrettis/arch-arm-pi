@@ -11,22 +11,23 @@ This is a guide to install Arch Linux ARM on a Raspberry Pi 4 or 5.
 - Monitor
 
 `Software`
-- [Arch Linux ARM image for Raspberry Pi 4 or 5](https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz)
+- [Arch Linux ARM image for Raspberry Pi 4 or 5](http://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz)
 - [fdisk (util-linux)](https://www.archlinux.org/packages/core/x86_64/util-linux/)
 - [bsdtar (libarchive)](https://www.archlinux.org/packages/extra/x86_64/libarchive/)
+- [nano (nano)](https://www.archlinux.org/packages/core/x86_64/nano/)
 
 ## Installation
 
 1. Download the latest Arch Linux ARM image for Raspberry Pi 4 or 5 from the [my website](https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz).
 
 ```bash
-wget https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
+wget http://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
 ```
 
 or
 
 ```bash
-curl -O https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
+curl -O http://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
 ```
 
 2. Format SD Card.
