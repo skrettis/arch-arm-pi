@@ -1,25 +1,23 @@
 # Arch Linux ARM on Raspberry Pi 4 + 5
-# ===================================
+This is a guide to install Arch Linux ARM on a Raspberry Pi 4 or 5.
 
-# This is a guide to install Arch Linux ARM on a Raspberry Pi 4 or 5.
+## Prerequisites
 
-# ## Prerequisites
+`Hardware`
+- Raspberry Pi 4 or 5
+- MicroSD card
+- USB-C power supply
+- HDMI cable
+- Monitor
 
-## Hardware
-# - Raspberry Pi 4 or 5
-# - MicroSD card
-# - USB-C power supply
-# - HDMI cable
-# - Monitor
+`Software`
+- [Arch Linux ARM image for Raspberry Pi 4 or 5](https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz)
+- [fdisk (util-linux)](https://www.archlinux.org/packages/core/x86_64/util-linux/)
+- [bsdtar (libarchive)](https://www.archlinux.org/packages/extra/x86_64/libarchive/)
 
-## Software
-# - [Arch Linux ARM image for Raspberry Pi 4 or 5](https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz)
-# - [fdisk (util-linux)](https://www.archlinux.org/packages/core/x86_64/util-linux/)
-# - [bsdtar (libarchive)](https://www.archlinux.org/packages/extra/x86_64/libarchive/)
+## Installation
 
-# ## Installation
-
-# 1. Download the latest Arch Linux ARM image for Raspberry Pi 4 or 5 from the [my website](https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz).
+1. Download the latest Arch Linux ARM image for Raspberry Pi 4 or 5 from the [my website](https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz).
 
 ```bash
 wget https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
@@ -31,13 +29,13 @@ or
 curl -O https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
 ```
 
-# 2. Format SD Card.
+2. Format SD Card.
 
 ```bash
 sudo fdisk /dev/sdX
 ```
 
-```bash
+```
 Command (m for help): o # Create a new empty DOS partition table
 Command (m for help): n # Create a new partition
 Command (m for help): p # Primary partition
@@ -60,7 +58,7 @@ sudo mkfs.vfat /dev/sdX1
 sudo mkfs.ext4 /dev/sdX2
 ```
 
-# 3. Mount the SD card.
+3. Mount the SD card.
 
 ```bash
 sudo mkdir boot
@@ -69,7 +67,7 @@ sudo mount /dev/sdX1 boot
 sudo mount /dev/sdX2 root
 ```
 
-# 4. Extract the Arch Linux ARM image.
+4. Extract the Arch Linux ARM image.
 
 ```bash
 bsdtar -xpf ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz -C root
@@ -77,7 +75,7 @@ sync
 mv root/boot/* boot
 ```
 
-# 5. Configure the system.
+5. Configure the system.
 
 ```bash
 sudo nano root/etc/fstab
@@ -88,43 +86,42 @@ sudo nano root/etc/fstab
 /dev/mmcblk0p2  /       ext4    defaults,rw,errors=remount-ro 0       1
 ```
 
-# 6. Unmount the SD card.
+6. Unmount the SD card.
 
 ```bash
 sudo umount boot root
 ```
 
-# 7. Insert the SD card into the Raspberry Pi.
+7. Insert the SD card into the Raspberry Pi.
 
-# 8. Connect the HDMI cable to the monitor.
+8. Connect the HDMI cable to the monitor.
 
-# 9. Connect the USB-C power supply to the Raspberry Pi.
+9. Connect the USB-C power supply to the Raspberry Pi.
 
-# 10. Boot the Raspberry Pi.
+10. Boot the Raspberry Pi.
 
-# 11. Login as the `alarm` user with the password `alarm`.
+11. Login as the `alarm` user with the password `alarm`.
 
-# 12. Change the password.
-
+12. Change to the `root` user with the password `root`.
 ```bash
-passwd
+su -
 ```
 
-# 13. Initialize the pacman keyring.
+14. Initialize the pacman keyring.
 
 ```bash
-sudo pacman-key --init
-sudo pacman-key --populate archlinuxarm
+pacman-key --init
+pacman-key --populate archlinuxarm
 ```
 
-# 14. Update the system.
+14. Update the system.
 
 ```bash
-sudo pacman -Syu
+pacman -Syu
 ```
 
-# 15. Reboot the Raspberry Pi.
+15. Reboot the Raspberry Pi.
 
 ```bash
-sudo reboot
+reboot
 ```
