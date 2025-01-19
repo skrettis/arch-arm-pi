@@ -17,7 +17,7 @@ This is a guide to install Arch Linux ARM on a Raspberry Pi 4 or 5.
 
 ## Installation
 
-1. Download the latest Arch Linux ARM image for Raspberry Pi 4 or 5 from the [my website](https://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz).
+1. Download the latest Arch Linux ARM image for Raspberry Pi 4 or 5 from the [website](http://arch.jlake.co/download/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz).
 
 ```bash
 wget http://arch.jlake.co/download/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
