@@ -29,6 +29,8 @@ or
 curl -O http://arch.jlake.co/aarch64/ArchLinuxARM-rpi-aarch64-2024-11-07.tar.gz
 ```
 
+Optional - Check the file CHECKSUM using sums.txt available at http://arch.jlake.co/
+
 2. Format SD Card.
 
 ```bash
