@@ -109,7 +109,7 @@ sudo umount boot root
 su -
 ```
 
-14. Initialize the pacman keyring.
+13. Initialize the pacman keyring.
 
 ```bash
 pacman-key --init
