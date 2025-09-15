@@ -65,8 +65,8 @@ sudo mkfs.ext4 /dev/sdX2
 ```bash
 sudo mkdir boot
 sudo mkdir root
-sudo mount /dev/sdX1 boot
-sudo mount /dev/sdX2 root
+sudo mount -o rw /dev/sdX1 boot
+sudo mount -o rw /dev/sdX2 root
 ```
 
 4. Extract the Arch Linux ARM image.
