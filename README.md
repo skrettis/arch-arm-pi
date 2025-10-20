@@ -1,14 +1,14 @@
-# Arch Linux ARM on Raspberry Pi 4 + 5
-This is a guide to install Arch Linux ARM on a Raspberry Pi 4 or 5.
+# Arch Linux ARM on Raspberry Pi Zero 2W
+This is a guide to install Arch Linux ARM on a Raspberry Zero 2 Wifi
 
 ## Prerequisites
 
 `Hardware`
-- Raspberry Pi 4 or 5
+- Raspberry Pi Zero 2 wifi
 - MicroSD card
-- USB-C power supply
-- HDMI cable
-- Monitor
+- POE USB-C power splitter from Ali like https://www.aliexpress.com/item/1005007302845700.html
+- Waweshare OLED HAT from ALIexpress like:  https://www.aliexpress.com/item/1005006604593943.html
+- Headless
 
 `Software`
 - [fdisk (util-linux)](https://www.archlinux.org/packages/core/x86_64/util-linux/)
@@ -127,3 +127,6 @@ pacman -Syu
 ```bash
 reboot
 ```
+
+16. Firmware update  ## TBD - debian -> arch
+sudo rpi-eeprom-update -a && sudo reboot now
