@@ -8,6 +8,7 @@ This is a guide to install Arch Linux ARM on a Raspberry Zero 2 Wifi
 - MicroSD card
 - POE USB-C power splitter from Ali like https://www.aliexpress.com/item/1005007302845700.html
 - Waweshare OLED HAT from ALIexpress like:  https://www.aliexpress.com/item/1005006604593943.html
+- Wifi SSID search and update from OLED hat
 - Headless
 
 `Software`
